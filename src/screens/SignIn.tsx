@@ -1,72 +1,75 @@
-import {View, Text, Pressable} from "react-native";
-import styled from 'styled-components/native';
-import {useSafeAreaInsets} from 'react-native-safe-area-context';
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
-import {fakePressHandler} from "../utils/fakePressHandler";
+import { View, Text, Pressable } from 'react-native';
+import { useSafeAreaInsets } from 'react-native-safe-area-context';
+import styled from 'styled-components/native';
 
-const SignIn = () => {
-    const insets = useSafeAreaInsets();
+import { fakePressHandler } from '../utils/fakePressHandler';
 
-    return (
-        <Container paddingTop={insets.top}>
-            <LogoContainer>
-                <View>
-                    <Logo source={require('../assets/Logo.png')}/>
-                </View>
-            </LogoContainer>
-            <SignInFormContainer>
-                <InputArea>
-                    <FontAwesome5 style={{marginRight: 16}} name="user-alt" size={16} color="black" />
-                    <StyledInput placeholder={'Email or Phone Number'}></StyledInput>
-                </InputArea>
-                <InputArea>
-                    <Entypo style={{marginRight: 16}} name="lock" size={16} color="black" />
-                    <StyledInput placeholder={'Password'}></StyledInput>
-                </InputArea>
-                <ForgotPasswordWrapper>
-                    <Pressable onPress={fakePressHandler('forgot password')}>
-                        <Text>
-                            FORGOT PASSWORD?
-                        </Text>
-                    </Pressable>
-                </ForgotPasswordWrapper>
-                <SignInButton onPress={fakePressHandler('sign in')}>
-                    <SignInTextButton>
-                        SIGN IN
-                    </SignInTextButton>
-                </SignInButton>
-            </SignInFormContainer>
-            <SignUpSocialMediaContainer>
-                <SignUpTextContainer>
-                    <SignUpText>
-                        Don’t have an account?
-                    </SignUpText>
-                    <SignUpText>
-                        <SignUpBoldText>SIGN UP </SignUpBoldText>using your email address or social media below
-                    </SignUpText>
-                </SignUpTextContainer>
-                <SocialMediasContainer>
-                    <SocialMediaItem onPress={fakePressHandler('facebook')}>
-                        <FontAwesome5 name="facebook-f" size={16} color="white" />
-                    </SocialMediaItem>
-                    <SocialMediaItem onPress={fakePressHandler('twitter')}>
-                        <FontAwesome5 name="twitter" size={16} color="white" />
-                    </SocialMediaItem>
-                    <SocialMediaItem onPress={fakePressHandler('google')}>
-                        <FontAwesome5 name="google" size={16} color="white" />
-                    </SocialMediaItem>
-                    <SocialMediaItem onPress={fakePressHandler('apple')}>
-                        <FontAwesome5 name="apple" size={16} color="white" />
-                    </SocialMediaItem>
-                </SocialMediasContainer>
-            </SignUpSocialMediaContainer>
-        </Container>
-    );
+const SignIn = (): JSX.Element => {
+  const insets = useSafeAreaInsets();
+
+  return (
+    <Container paddingTop={insets.top}>
+      <LogoContainer>
+        <View>
+          <Logo source={require('../assets/Logo.png')} />
+        </View>
+      </LogoContainer>
+      <SignInFormContainer>
+        <InputArea>
+          <FontAwesome5
+            /* eslint-disable-next-line react-native/no-inline-styles */
+            style={{ marginRight: 16 }}
+            name="user-alt"
+            size={16}
+            color="black"
+          />
+          <StyledInput placeholder={'Email or Phone Number'} />
+        </InputArea>
+        <InputArea>
+          {/* eslint-disable-next-line react-native/no-inline-styles */}
+          <Entypo style={{ marginRight: 16 }} name="lock" size={16} color="black" />
+          <StyledInput placeholder={'Password'} />
+        </InputArea>
+        <ForgotPasswordWrapper>
+          <Pressable onPress={fakePressHandler('forgot password')}>
+            <Text>FORGOT PASSWORD?</Text>
+          </Pressable>
+        </ForgotPasswordWrapper>
+        <SignInButton onPress={fakePressHandler('sign in')}>
+          <SignInTextButton>SIGN IN</SignInTextButton>
+        </SignInButton>
+      </SignInFormContainer>
+      <SignUpSocialMediaContainer>
+        <SignUpTextContainer>
+          <SignUpText>Don’t have an account?</SignUpText>
+          <SignUpText>
+            <SignUpBoldText>SIGN UP </SignUpBoldText>using your email address or social
+            media below
+          </SignUpText>
+        </SignUpTextContainer>
+        <SocialMediasContainer>
+          <SocialMediaItem onPress={fakePressHandler('facebook')}>
+            <FontAwesome5 name="facebook-f" size={16} color="white" />
+          </SocialMediaItem>
+          <SocialMediaItem onPress={fakePressHandler('twitter')}>
+            <FontAwesome5 name="twitter" size={16} color="white" />
+          </SocialMediaItem>
+          <SocialMediaItem onPress={fakePressHandler('google')}>
+            <FontAwesome5 name="google" size={16} color="white" />
+          </SocialMediaItem>
+          <SocialMediaItem onPress={fakePressHandler('apple')}>
+            <FontAwesome5 name="apple" size={16} color="white" />
+          </SocialMediaItem>
+        </SocialMediasContainer>
+      </SignUpSocialMediaContainer>
+    </Container>
+  );
 };
 
 type ContainerT = {
-    paddingTop: number
-}
+  paddingTop: number;
+};
 
 const Container = styled.View<ContainerT>`
   flex: 1;
@@ -150,11 +153,10 @@ const SocialMediaItem = styled.Pressable`
   height: 38px;
   justify-content: center;
   align-items: center;
-`
+`;
 
 const SignUpTextContainer = styled.View`
   padding-bottom: 36px;
 `;
 
 export default SignIn;
-

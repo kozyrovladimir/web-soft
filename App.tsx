@@ -1,18 +1,20 @@
-import {StatusBar} from 'expo-status-bar';
-import {NavigationContainer} from '@react-navigation/native';
-import Navigation from "./src/navigation/Navigation";
+import React from 'react';
+
+import { NavigationContainer } from '@react-navigation/native';
+import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-export default function App() {
-    return (
-        <SafeAreaProvider>
-            <NavigationContainer>
-                <StatusBar
-                    animated={true}
-                    backgroundColor={'#fff'}
-                />
-                <Navigation/>
-            </NavigationContainer>
-        </SafeAreaProvider>
-    );
-}
+import Navigation from './src/navigation/Navigation';
+
+const App = (): JSX.Element => {
+  return (
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <StatusBar animated={true} backgroundColor={'#fff'} />
+        <Navigation />
+      </NavigationContainer>
+    </SafeAreaProvider>
+  );
+};
+
+export default App;

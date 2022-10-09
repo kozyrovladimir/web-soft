@@ -1,3 +1,4 @@
-export function fakePressHandler (message: string): () => void {
-   return () => alert(message);
+export function fakePressHandler(message: string): () => void {
+  // eslint-disable-next-line no-alert
+  return () => alert(message);
 }
