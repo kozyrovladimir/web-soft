@@ -1,15 +1,14 @@
+import React from 'react';
+
 import { FontAwesome5, Entypo } from '@expo/vector-icons';
 import { View, Text, Pressable } from 'react-native';
-import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import styled from 'styled-components/native';
 
 import { fakePressHandler } from '../utils/fakePressHandler';
 
-const SignIn = (): JSX.Element => {
-  const insets = useSafeAreaInsets();
-
+const SignIn: React.FC = () => {
   return (
-    <Container paddingTop={insets.top}>
+    <SignInContainer>
       <LogoContainer>
         <View>
           <Logo source={require('../assets/Logo.png')} />
@@ -63,17 +62,13 @@ const SignIn = (): JSX.Element => {
           </SocialMediaItem>
         </SocialMediasContainer>
       </SignUpSocialMediaContainer>
-    </Container>
+    </SignInContainer>
   );
 };
 
-type ContainerT = {
-  paddingTop: number;
-};
-
-const Container = styled.View<ContainerT>`
+const SignInContainer = styled.View`
   flex: 1;
-  padding: ${props => props.paddingTop}px 20px 20px 20px;
+  background-color: white;
 `;
 
 const LogoContainer = styled.View`
