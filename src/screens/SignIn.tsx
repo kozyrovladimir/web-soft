@@ -11,7 +11,7 @@ const SignIn: React.FC = () => {
     <SignInContainer>
       <LogoContainer>
         <View>
-          <Logo source={require('../assets/Logo.png')} />
+          <Logo source={require('../assets/logo-lg.png')} />
         </View>
       </LogoContainer>
       <SignInFormContainer>
@@ -68,7 +68,7 @@ const SignIn: React.FC = () => {
 
 const SignInContainer = styled.View`
   flex: 1;
-  background-color: white;
+  background-color: inherit;
 `;
 
 const LogoContainer = styled.View`

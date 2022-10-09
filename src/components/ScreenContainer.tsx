@@ -9,9 +9,10 @@ interface ScreenContainerI {
 
 const ScreenContainer: React.FC<ScreenContainerI> = ({ children }) => {
   const insets = useSafeAreaInsets();
+  const paddingTop = insets.top;
 
   return (
-    <StyledScreenContainer paddingTop={insets.top}>{children}</StyledScreenContainer>
+    <StyledScreenContainer paddingTop={paddingTop}>{children}</StyledScreenContainer>
   );
 };
 

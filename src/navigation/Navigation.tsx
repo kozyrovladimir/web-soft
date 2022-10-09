@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import ScreenContainer from '../components/ScreenContainer';
 import { ScreenNames } from '../enums';
 import Categories from '../screens/Categories';
-import Main from '../screens/Main';
+import Main from '../screens/Main/Main';
 import SignIn from '../screens/SignIn';
 
 const AppStack = createNativeStackNavigator();
@@ -12,7 +12,7 @@ const Navigation = (): JSX.Element => {
   return (
     <ScreenContainer>
       <AppStack.Navigator
-        initialRouteName={ScreenNames.SignIn}
+        initialRouteName={ScreenNames.Main}
         screenOptions={() => ({
           headerShown: false,
         })}
