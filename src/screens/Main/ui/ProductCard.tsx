@@ -7,6 +7,7 @@ const ProductCard: React.FC = () => {
   return (
     <CardProductContainer>
       <CardProductImageContainer
+        style={{ aspectRatio: 1 }}
         source={require('../../../assets/product_images/img_1.png')}
         resizeMode="stretch"
       >
@@ -35,7 +36,6 @@ const CardProductContainer = styled.View`
 
 const CardProductImageContainer = styled.ImageBackground`
   width: 100%;
-  aspect-ratio: 1/1;
   padding-top: 12px;
 `;
 
