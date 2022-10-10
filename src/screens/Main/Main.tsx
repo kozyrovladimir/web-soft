@@ -119,7 +119,6 @@ const FilterButtonsContainer = styled.View`
 const FilterButtonBox = styled.View`
   flex-direction: row;
   border: 1px solid black;
-  height: 32px;
   padding: 8px;
 `;
 
