@@ -7,6 +7,8 @@ const ProductCard: React.FC = () => {
   return (
     <CardProductContainer>
       <CardProductImageContainer
+        /* eslint-disable-next-line react-native/no-inline-styles */
+        /* 'aspectRatio: 1' fix problems with android */
         style={{ aspectRatio: 1 }}
         source={require('../../../assets/product_images/img_1.png')}
         resizeMode="stretch"

@@ -6,6 +6,7 @@ import { Pressable, ScrollView, Text } from 'react-native';
 import styled from 'styled-components/native';
 
 import ProductCard from './ui/ProductCard';
+import FilterButton from './ui/FilterButton';
 
 const Main = (): JSX.Element => {
   return (
@@ -24,10 +25,7 @@ const Main = (): JSX.Element => {
           <Text>All Products</Text>
         </FilterTextContainer>
         <FilterButtonsContainer>
-          <FilterButtonBox>
-            <Feather name="filter" size={16} color="black" />
-            <FilterButtonText>Filter</FilterButtonText>
-          </FilterButtonBox>
+          <FilterButton>Filter</FilterButton>
           <HorizontalView>
             <StyledPresssable>
               <FontAwesome5 name="list" size={16} color="gray" />
@@ -114,16 +112,6 @@ const FilterButtonsContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-`;
-
-const FilterButtonBox = styled.View`
-  flex-direction: row;
-  border: 1px solid black;
-  padding: 8px;
-`;
-
-const FilterButtonText = styled.Text`
-  margin-left: 10px;
 `;
 
 const HorizontalView = styled.View`
