@@ -1,4 +1,3 @@
-// TDO: ned to continue
 import React from 'react';
 
 import { ScrollView } from 'react-native';
@@ -15,27 +14,29 @@ interface ProductsListI {
 
 const ProductsList: React.FC<ProductsListI> = ({ products }) => {
   const countItemsInRow = 2;
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
+
   const productsInPackages = packItems(products, countItemsInRow);
 
   return (
     <ScrollView>
-      {/*<HorizontalView>*/}
-      {/*  <ProductCard />*/}
-      {/*  <ProductCard />*/}
-      {/*</HorizontalView>*/}
-      {/*<HorizontalView>*/}
-      {/*  <ProductCard />*/}
-      {/*  <ProductCard />*/}
-      {/*</HorizontalView>*/}
-      {/*<HorizontalView>*/}
-      {/*  <ProductCard />*/}
-      {/*  <ProductCard />*/}
-      {/*</HorizontalView>*/}
-      {/*<HorizontalView>*/}
-      {/*  <ProductCard />*/}
-      {/*  <ProductCard />*/}
-      {/*</HorizontalView>*/}
+      {productsInPackages.map(([firstProduct, secondProduct]) => {
+        return (
+          <HorizontalView>
+            <ProductCard
+              price={firstProduct.price}
+              title={firstProduct.title}
+              description={firstProduct.description}
+            />
+            {secondProduct && (
+              <ProductCard
+                price={secondProduct.price}
+                title={secondProduct.title}
+                description={secondProduct.description}
+              />
+            )}
+          </HorizontalView>
+        );
+      })}
     </ScrollView>
   );
 };
