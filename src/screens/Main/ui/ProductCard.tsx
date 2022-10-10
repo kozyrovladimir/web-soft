@@ -3,12 +3,21 @@ import React from 'react';
 import { FontAwesome } from '@expo/vector-icons';
 import styled from 'styled-components/native';
 
-const ProductCard: React.FC = () => {
+interface ProductCardI {
+  title: string;
+  description: string;
+  price: number;
+}
+
+const ProductCard: React.FC<ProductCardI> = ({ title, price, description }) => {
+  const priceString = `${price} $`;
+
   return (
     <CardProductContainer>
       <CardProductImageContainer
+        /* 'aspectRatio: 1' fix problems with android */
         style={{ aspectRatio: 1 }}
-        source={require('../../../assets/product_images/img_1.png')}
+        source={require('../../../assets/product_images/img.png')}
         resizeMode="stretch"
       >
         <TopCardInfoContainer>
@@ -21,9 +30,9 @@ const ProductCard: React.FC = () => {
         </TopCardInfoContainer>
       </CardProductImageContainer>
       <CardProductInfoContainer>
-        <BrandName>Aldo</BrandName>
-        <ModelDescription>REID Lace-Up Shoes Multi</ModelDescription>
-        <ModelNumber>AED 123</ModelNumber>
+        <BrandName>{title}</BrandName>
+        <ModelDescription>{description}</ModelDescription>
+        <ModelNumber>{priceString}</ModelNumber>
       </CardProductInfoContainer>
     </CardProductContainer>
   );
