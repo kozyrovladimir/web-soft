@@ -8,6 +8,7 @@ import ProductCard from './ui/ProductCard';
 import ViewSwitch from './ui/ViewSwitch';
 
 const Main = (): JSX.Element => {
+  // @ts-ignore
   return (
     <Layout>
       <FilterBar>
@@ -21,20 +22,52 @@ const Main = (): JSX.Element => {
       </FilterBar>
       <ScrollView>
         <HorizontalView>
-          <ProductCard />
-          <ProductCard />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
         </HorizontalView>
         <HorizontalView>
-          <ProductCard />
-          <ProductCard />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
         </HorizontalView>
         <HorizontalView>
-          <ProductCard />
-          <ProductCard />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
         </HorizontalView>
         <HorizontalView>
-          <ProductCard />
-          <ProductCard />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
+          <ProductCard
+            price={12}
+            description={'REID Lace-Up Shoes Multi'}
+            title={'Aldo'}
+          />
         </HorizontalView>
       </ScrollView>
     </Layout>
